@@ -30,7 +30,7 @@ public class HashMapPractice {
         } while (!newStudent.equals(""));
 
         //Print the student and ID numbers
-        System.out.println("\nStudent and ID numbers:");
+        System.out.println("Student and ID numbers:");
 
         for (Map.Entry<String, Integer> student : students.entrySet()) {
             System.out.println((student.getKey() + ": " + student.getValue()));
