@@ -35,8 +35,8 @@ public class Main {
                 charactersMap.put(letter, 1);
             }
 
-
         }
+
         for (Map.Entry<Character, Integer> letter : charactersMap.entrySet()) {
             System.out.println(letter.getKey() + ": " + letter.getValue());
 
