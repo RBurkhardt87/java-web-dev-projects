@@ -12,26 +12,32 @@ not for handling collections or their organization.
 public class MenuItem {
 
     //TODO: Declare fields for objects of MenuItem Class (Private for best practice)
+
     private String name;
     private double price;
     private String description;
     private String category;
     private boolean isNew;
-    private LocalDate dateAdded;
+    private final LocalDate dateAdded;
+    //NOTES: Adding final to the dateAdded means that when it is initialized, it will not be able to be changed.
 
 
     //TODO: Create constructor for objects of MenuItem Class (Private vs Public???)
-    MenuItem(String name, double price, String description, String category, boolean isNew, LocalDate dateAdded){
+    //NOTES: Carrie left out LocalDate from parameter, since a date will be stamped on it when object is created by
+    //setting the value of this.dateAdded to 'LocalDate.now()'
+
+    public MenuItem(String name, double price, String description, String category, boolean isNew){
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
         this.isNew = isNew;
-        this.dateAdded = dateAdded;
+        this.dateAdded = LocalDate.now();
     }
 
 
     //TODO: Create Getters for fields (Public? So others can retrieve/modify private fields)
+
     public String getName(){
         return name;
     }
@@ -58,6 +64,9 @@ public class MenuItem {
 
 
     //TODO: Create Setters for the fields (Public? So others can retrieve/modify private fields)
+    //We will not be making a setter for dateAdded because it has been finalized. We just need to be able to retrieve it
+    //and not actually modify, which we can't do anyway because of keyword "final" in declaration.
+
     public void setName(String name){
         this.name = name;
     }
@@ -76,10 +85,6 @@ public class MenuItem {
 
     public void setIsNew(boolean isNew){
         this.isNew = isNew;
-    }
-
-    public void setDateAdded(LocalDate dateAdded){
-        this.dateAdded = dateAdded;
     }
 
 
