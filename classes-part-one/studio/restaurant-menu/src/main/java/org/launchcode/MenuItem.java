@@ -1,6 +1,7 @@
 package org.launchcode;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 
 /*
@@ -26,13 +27,14 @@ public class MenuItem {
     //NOTES: Carrie left out LocalDate from parameter, since a date will be stamped on it when object is created by
     //setting the value of this.dateAdded to 'LocalDate.now()'
 
-    public MenuItem(String name, double price, String description, String category, boolean isNew){
+    public MenuItem(String name, double price, String description, String category){
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
-        this.isNew = isNew;
         this.dateAdded = LocalDate.now();
+        //Test isNew() to be false
+//        this.dateAdded = LocalDate.parse("2022-06-12");
     }
 
 
@@ -50,7 +52,7 @@ public class MenuItem {
         return description;
     }
 
-    public String getCategory(){
+    public String getCategory() {
         return category;
     }
 
@@ -87,5 +89,38 @@ public class MenuItem {
         this.isNew = isNew;
     }
 
+
+
+
+
+    //isNew method to check if items is new or not
+//    public boolean isNew(){
+//        LocalDate today = LocalDate.now();
+//        int daysOld = ChronoUnit.DAYS.between(dateAdded, today);
+//        if (daysOld >= 90){
+//            return false;
+//        }
+//        return true;
+//    }
+
+
+
+    //Carrie made her isNew method like this. Very similar, just a little different...
+
+     boolean isNew() {
+        LocalDate today = LocalDate.now();
+        double daysBetween = getDateAdded().until(today, ChronoUnit.DAYS);
+        return daysBetween < 90;
+    }
+
+
+
+    //Specials Methods: create toString Method
+    @Override
+    public String toString(){
+        String newText = isNew() ? " -- New!" : "";
+        return name + newText + "\n" +
+                description + " | $" + price;
+    }
 
 }

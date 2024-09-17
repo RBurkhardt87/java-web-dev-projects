@@ -58,7 +58,30 @@ public class Student {
 
 
 
-        // To instantiate the Student class, add your code to the main in the file, SchoolPractice.
+        // To instantiate the Student class, add your code to the main in the file, StudentPractice.
 
+        //Create an addGrade method
+
+        public void addGrade(int courseCredits, double grade) {
+                // Update the appropriate fields: numberOfCredits, gpa
+                double totalQualityScore = this.gpa * this.numberOfCredits;
+                totalQualityScore += courseCredits * grade;
+                this.numberOfCredits += courseCredits;
+                this.gpa = totalQualityScore/this.numberOfCredits;
+        }
+
+
+        //Create getGradeLevel
+        public String getGradeLevel(int credits) {
+                // Determine the grade level of the student based on numberOfCredits
+
+                if (credits <= 29){
+                        return "freshman";
+                } else if (credits <=59){
+                        return "sophomore";
+                } else if (credits <=89) {
+                        return "junior";
+                } else return "senior";
+        }
 
 }
