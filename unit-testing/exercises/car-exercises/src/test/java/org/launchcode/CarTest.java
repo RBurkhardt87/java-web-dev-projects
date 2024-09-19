@@ -23,11 +23,39 @@ class CarTest {
     //TODO: constructor sets gasTankLevel properly
     @Test
     public void testInitialGasTank() {
-        Car test_car = new Car("Toyota", "Prius", 10, 50);
         assertEquals( 10, test_car.getGasTankLevel(),.001);
     }
 
     //TODO: gasTankLevel is accurate after driving within tank range
+
+    @Test
+    public void testGasAfterDriving(){
+        test_car.drive(50);
+        String msg = "gas tank level is accurate after driving within tank range.";
+        int expected = 9;
+        double actual = test_car.getGasTankLevel();
+        double delta = .001;
+        assertEquals(expected, actual, delta, msg);
+
+    }
+
+
     //TODO: gasTankLevel is accurate after attempting to drive past tank range
+    @Test
+    public void testGasAfterExceedingTankRange(){
+        test_car.drive(501);
+        String msg = "Gas tank level is accurate after attempting to drive past tank range.";
+        double expected = 0;
+        double actual = test_car.getGasTankLevel();
+        double delta = .001;
+        assertEquals(expected, actual, delta, msg);
+    }
+
     //TODO: can't have more gas than tank size, expect an exception
+
+    @Test
+    public void testGasOverFillException(){
+        assertThrows(IllegalArgumentException.class, () -> test_car.addGas(5),
+        "Shouldn't get here, car cannot have more gas in tank than the size of the tank.");
+    }
 }
