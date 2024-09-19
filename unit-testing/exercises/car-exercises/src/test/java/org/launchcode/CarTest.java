@@ -2,8 +2,9 @@ package org.launchcode;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+
 
 class CarTest {
     Car test_car;
@@ -22,6 +23,7 @@ class CarTest {
     //TODO: constructor sets gasTankLevel properly
     @Test
     public void testInitialGasTank() {
+        Car test_car = new Car("Toyota", "Prius", 10, 50);
         assertEquals( 10, test_car.getGasTankLevel(),.001);
     }
 
