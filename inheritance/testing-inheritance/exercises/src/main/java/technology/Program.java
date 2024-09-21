@@ -88,7 +88,10 @@ public class Program {
         System.out.println("\nDid the message send: " + myPhone.getDelivered());
 
 
-
+        //TODO:
+        //Now that I know everything is functioning properly. I could actually write a program with a little more
+        //cohesiveness rather than just testing... I guess I could have just written unit test to make sure things
+        //were working as expected. Next Time!
 
 
     }

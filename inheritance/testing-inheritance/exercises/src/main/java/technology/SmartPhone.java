@@ -1,6 +1,5 @@
 package technology;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class SmartPhone extends Computer {
@@ -34,11 +33,6 @@ public class SmartPhone extends Computer {
     }
 
 
-
-    //TODO: CREATE METHOD THAT PROMPTS USER TO ENTER A TEXT
-
-
-
     //TODO: CREATE INSTANCE METHOD sendText(Scanner input)
     //I want to let the user input what they want to text and then print the message.
     //After message prints. I want to make delivered return true.
@@ -68,11 +62,18 @@ public class SmartPhone extends Computer {
     //method, I want to try to do an override...
 
     @Override
-    public String powerOn(){
-        return "\n" + getBrand() + "Powering On... \n5G network is available " +
-                "\nReady to stay connected!\n";
+    public boolean powerOn(){
+        System.out.println("\n" + getBrand() + "Powering On... \n5G network is available " +
+                "\nReady to stay connected!\n");
+        return true;
 
+        //If I override the method, what happens to the poweredOn variable I added?
+        //How should I use that here... Do I even need it since I changed the return
+        //type to boolean instead of String for testing purposes.
     }
 
 
+    //TODO:
+    //If I write a powerOff() for Computer Class I could override it like this one.
+    //I'm sure there is more I could build off sendText, but I'll let it sit for now
 }

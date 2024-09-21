@@ -45,4 +45,7 @@ public class Laptop extends Computer {
     }
 
 
+    //TODO:
+    //Probably would like to make a plugin method for when the battery is dead. I will come back in later to write it
+
 }
