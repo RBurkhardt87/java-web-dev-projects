@@ -1,17 +1,23 @@
-public class Cat {
+package org.launchcode;
+
+public abstract class AbstractCat {
+
+    //First add 'abstract' into the class declaration (see above)
 
     private boolean tired = false;
     private boolean hungry = false;
     private double weight;
 
-    // The biological family for all cat species
+
+
     private String family = "Felidae";
 
-    public Cat (double aWeight) {
+
+    public AbstractCat (double aWeight) {
         weight = aWeight;
     }
 
-    /**** Getters and Setters ****/
+
 
     public boolean isTired() {
         return tired;
@@ -41,7 +47,9 @@ public class Cat {
         return family;
     }
 
+
     /**** Instance Methods ****/
+
 
     // A cat is rested and hungry after it sleeps
     public void sleep() {
@@ -60,7 +68,8 @@ public class Cat {
         hungry = false;
     }
 
-    public String noise () {
-        return "Meeeeeeooooowww!";
-    }
+
+
+    //Turned into a abstract method
+    public abstract String noise ();
 }
