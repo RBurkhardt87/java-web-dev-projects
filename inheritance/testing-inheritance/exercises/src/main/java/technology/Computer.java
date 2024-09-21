@@ -59,9 +59,9 @@ public class Computer {
     //TODO: (2) CREATE INSTANCE METHOD: powerOn()
     //This method will return a String. It will print a welcome message when powerOn() is called
     public String powerOn(){
-        return "Welcome! Your " + brand +
-                " computer has powered on and set to " +
-                screenMode + " for your preferred use.";
+        return "\n" + brand + ": Welcome! Your " + brand +
+                " computer has powered on and is set to " +
+                screenMode + " for your preferred use.\n";
     }
 
 
