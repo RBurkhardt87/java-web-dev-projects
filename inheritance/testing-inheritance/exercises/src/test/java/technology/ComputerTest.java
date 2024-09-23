@@ -17,7 +17,7 @@ public class ComputerTest {
     @BeforeEach
     public void initComputer() {
         test_computer = new Computer("Dell", 2021, "Light Mode");
-        test_comp = new Computer("Lenovo", 2024, "Dark Mode");
+        test_comp = new Computer("Acer", 2024, "Dark Mode");
     }
 
     //TODO: add emptyTest so we can configure our runtime environment
@@ -73,3 +73,9 @@ public class ComputerTest {
         assertTrue(test_computer.powerOn());
     }
 }
+
+/*
+Coverage said it was 73% (14/19 lines) Some of the code is print lines, so I think it is looking decent to start.
+It will round more out after I write the "empty" test as well. 
+
+ */

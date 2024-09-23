@@ -18,7 +18,7 @@ public class Program {
 
         //TODO: USE THE METHODS ON THE OBJECT
         System.out.println(myComp.isNew());
-        System.out.println(myComp.powerOn());
+        myComp.powerOn();
 
 
 
@@ -30,7 +30,7 @@ public class Program {
         System.out.println(oldComp.getScreenMode());
 
         System.out.println(oldComp.isNew());
-        System.out.println(oldComp.powerOn());
+        oldComp.powerOn();
 
 
 
@@ -51,7 +51,7 @@ public class Program {
 
         System.out.println("\n\t\tCheck if Computer Methods work on Laptop Objects");
 
-        System.out.println(myLaptop.powerOn());
+        myLaptop.powerOn();
         System.out.println("Checking if " + myLaptop.getBrand() + " is new: " + myLaptop.isNew());
 
 
@@ -77,7 +77,7 @@ public class Program {
         System.out.println("\nChecking if " + myPhone.getBrand() + " is new: " + myPhone.isNew());
 
         System.out.println("\n\t\tCheck if the SmartPhone Override of powerOn() method works: ");
-        System.out.println(myPhone.powerOn());
+        myPhone.powerOn();
 
 
         //TODO: USE METHODS ON THE OBJECT

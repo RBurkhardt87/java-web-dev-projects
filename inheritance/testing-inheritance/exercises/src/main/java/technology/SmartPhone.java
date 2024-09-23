@@ -10,6 +10,7 @@ public class SmartPhone extends Computer {
     //TODO: DECLARE FIELDS
     private String provider;
     private boolean delivered = false;
+    private String powerMessage;
 
 
     //TODO: CREATE THE CONSTRUCTOR
@@ -17,6 +18,8 @@ public class SmartPhone extends Computer {
         super(brand, year, screenMode);
         this.provider = provider;
     }
+
+    //I might want to make other constructors that don't require a screenMode or even provider. Just year and brand/model
 
 
     //TODO: DECLARE GETTERS AND SETTERS
@@ -30,6 +33,14 @@ public class SmartPhone extends Computer {
 
     public boolean getDelivered(){
         return delivered;
+    }
+
+    public String getPowerMessage(){
+        return powerMessage;
+    }
+
+    public void setPowerMessage(){
+        this.powerMessage = powerMessage;
     }
 
 
@@ -63,17 +74,30 @@ public class SmartPhone extends Computer {
 
     @Override
     public boolean powerOn(){
-        System.out.println("\n" + getBrand() + "Powering On... \n5G network is available " +
-                "\nReady to stay connected!\n");
+        powerMessage = "\"\\n\" + getBrand() + \": Powering On... \\n5G network is available \" +\n" +
+                "                \"\\nReady to stay connected!\\n\"";
+        System.out.println(powerMessage);
         return true;
 
         //If I override the method, what happens to the poweredOn variable I added?
         //How should I use that here... Do I even need it since I changed the return
-        //type to boolean instead of String for testing purposes.
+        //type to boolean instead of String for testing purposes
     }
 
 
     //TODO:
     //If I write a powerOff() for Computer Class I could override it like this one.
+
     //I'm sure there is more I could build off sendText, but I'll let it sit for now
+
+    //Maybe I could store the user's messages in an arrayList. So they could look through their sent messaged
+    //Or if they don't send, I could have an arrayList of draft messages they could see.
+    //Maybe instead of an ArrayList of strings, I would do ArrayList of hashmaps, that way I could incorporate
+    //a contact name as the key and the message as its value.
+
+    //Could also make a contact list, I would make another class called contacts-- it couldn't be the abstract class tho
+    //because I would actually want to make contact objects to group into an arrayList of hashmaps.
+
+    //Or, I could take an already written data file of contacts (setup as hashmaps) and use it similarly to the techJobs
+    //Job positions, and be able to access them that way in the program.
 }

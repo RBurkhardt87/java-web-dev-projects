@@ -17,6 +17,9 @@ public class Laptop extends Computer {
         return charged;
     }
 
+    //Do I actually need this setter? I only want to change the charge when doHomework method is called.
+    //And when I create a plugIn method I will set it back to true. Doesn't seem like I would want this setter here.
+    //If someone changed the value, would it impact my methods? Think on how the code could be jeopardized or would it even matter.
     public void setCharged(boolean charged){
         this.charged = charged;
     }
@@ -46,6 +49,8 @@ public class Laptop extends Computer {
 
 
     //TODO:
-    //Probably would like to make a plugin method for when the battery is dead. I will come back in later to write it
+    //Probably would like to make a plugin method for when the battery is dead. I will come back in later to write it <---I would want it for smartphone too
+    //So, should I make it something in Computer to be inherited by both, or does it matter if they have their own methods? Best practice?
+    //I will write unit test for this method to check if it works instead of in the main program
 
 }

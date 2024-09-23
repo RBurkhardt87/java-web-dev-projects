@@ -75,9 +75,11 @@ public class Computer {
                 screenMode + " for your preferred use.\n");
         return true;
 
-        //Wasn't sure how to test a string properly, so I added poweredOn to help with testing as well
+        //Wasn't sure how to test a string properly (JUST SEEMED LIKE A LONG STRING TO TEST), so I added poweredOn to help with testing as well
         //But... I still can't test a boolean if it is a String method. I switched the method to boolean
-        //I need to look into best practices for String return testing.
+        //I need to look into best practices for String return testing. I don't like how true prints to the console.
+        //I guess I could just call the method. It already prints message and wouldn't display the 'true'
+        //Yep! that worked... still look into how to properly/best practices test String return types <--- these might not be the best returns for some methods
     }
 
     //TODO:
