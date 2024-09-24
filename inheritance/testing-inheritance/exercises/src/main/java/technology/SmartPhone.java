@@ -74,9 +74,11 @@ public class SmartPhone extends Computer {
 
     @Override
     public boolean powerOn(){
-        powerMessage = "\"\\n\" + getBrand() + \": Powering On... \\n5G network is available \" +\n" +
-                "                \"\\nReady to stay connected!\\n\"";
+        String border = "**********************************";
+        System.out.println(border);
+        powerMessage = "\n" + getBrand() + ": Powering On... \n5G network is available \nReady to stay connected!\n";
         System.out.println(powerMessage);
+        System.out.println(border);
         return true;
 
         //If I override the method, what happens to the poweredOn variable I added?

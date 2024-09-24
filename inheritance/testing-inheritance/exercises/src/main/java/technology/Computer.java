@@ -33,7 +33,7 @@ public class Computer {
         return screenMode;
     }
 
-    //DO I NEED THIS HERE SINCE IT IS JUST A VARIABLE FOR THE powerOn() method
+    //DO I NEED THIS HERE SINCE IT IS JUST A VARIABLE FOR THE powerOn() method  <--- I think so if I want to use for testing later
     public boolean isPoweredOn(){
         return poweredOn;
     }

@@ -55,7 +55,7 @@ public class Program {
         System.out.println("Checking if " + myLaptop.getBrand() + " is new: " + myLaptop.isNew());
 
 
-        //Ariel showed how to do a Java "template literal" during Datatype Studio
+        //Ariel showed us how to do a Java "template literal" during Datatype Studio
         //System.out.println(String.format("The area of a circle of radius %s is : %s ", radius, areaOfCircle));
 
 

@@ -12,7 +12,7 @@ public class ComputerTest {
     Computer test_computer;
     Computer test_comp;
 
-    //NOTE: Then you write your @BeforeEach-- remember you already declare
+    //NOTE: Then you write your @BeforeEach-- remember you already declared
     //the test object, so just initialize it here, otherwise an error will be thrown
     @BeforeEach
     public void initComputer() {

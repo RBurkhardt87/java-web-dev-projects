@@ -43,7 +43,7 @@ public class SmartPhoneTest {
     @Test
     public void constructorSetsScreenModeStarWarsTheme(){
         String msg = "object screenMode value should be what was passed in as arg.";
-        String expected = "Dark Mode";
+        String expected = "Star Wars Theme";
         String actual = test_phone1.getScreenMode();
         assertEquals(expected, actual, msg);
     }
