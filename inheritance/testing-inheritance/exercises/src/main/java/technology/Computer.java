@@ -2,51 +2,54 @@ package technology;
 
 import java.time.LocalDate;
 
-public class Computer {
+public class Computer  {
 
     //TODO: DECLARE FIELDS
     private String brand;
     private int year;
     private String screenMode;
     private boolean poweredOn = false;
+    private int computerCount = 0;
 
 
 
     //TODO: CREATE THE CONSTRUCTOR
-    public Computer(String brand, int year, String screenMode){
+    public Computer(String brand, int year, String screenMode) {
         this.brand = brand;
         this.year = year;
         this.screenMode = screenMode;
+
+        computerCount++;
     }
 
 
     //TODO: DECLARE GETTERS AND SETTERS
-    public String getBrand(){
+    public String getBrand() {
         return brand;
     }
 
-    public int getYear(){
+    public int getYear() {
         return year;
     }
 
-    public String getScreenMode(){
+    public String getScreenMode() {
         return screenMode;
     }
 
     //DO I NEED THIS HERE SINCE IT IS JUST A VARIABLE FOR THE powerOn() method  <--- I think so if I want to use for testing later
-    public boolean isPoweredOn(){
+    public boolean isPoweredOn() {
         return poweredOn;
     }
 
-    public void setBrand(String brand){
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 
-    public void setYear(int year){
+    public void setYear(int year) {
         this.year = year;
     }
 
-    public void setScreenMode(String screenMode){
+    public void setScreenMode(String screenMode) {
         this.screenMode = screenMode;
     }
 
@@ -55,21 +58,24 @@ public class Computer {
         this.poweredOn = poweredOn;
     }
 
+    public int getComputerCount() {
+        return computerCount;
+    }
+
     //TODO: (1) CREATE INSTANCE METHOD: isNew()
     //This method will return a boolean. True if new, false if not. If computer is over two years old, it's old.
     //Maybe I can use the LocalDate.now() along with the year declared as arg.
-    public boolean isNew(){
+    public boolean isNew() {
         LocalDate today = LocalDate.now();
         int currentYear = today.getYear();
         return currentYear - year <= 2;
     }
 
 
-
     //TODO: (2) CREATE INSTANCE METHOD: powerOn()
     //This method will return a String. It will print a welcome message when powerOn() is called
-    public boolean powerOn(){
-       poweredOn = true;
+    public boolean powerOn() {
+        poweredOn = true;
         System.out.println("\n" + brand + ": Welcome! Your " + brand +
                 " computer has powered on and is set to " +
                 screenMode + " for your preferred use.\n");
@@ -82,6 +88,27 @@ public class Computer {
         //Yep! that worked... still look into how to properly/best practices test String return types <--- these might not be the best returns for some methods
     }
 
+    /*
+
+    String getFormattedChoices() {
+        StringBuilder formattedChoices = new StringBuilder();
+        String newline = System.lineSeparator();
+        for (int choiceNum :  choiceMap.keySet()){
+            String choice = "\t" + choiceNum + " - " + choiceMap.get(choiceNum).getContent() + newline;
+            formattedChoices.append(choice);
+        }
+        return formattedChoices.toString();
+    }
+     */
+
+
+
+    String objectId() {
+        return "COMP- " + getComputerCount();
+    }
+
+}
+
     //TODO:
     //Probably would want to add a Power Off method too. Maybe after I write the tests, been at this for a minute
 
@@ -93,4 +120,4 @@ public class Computer {
 
 
 
-}
+

@@ -4,11 +4,15 @@ public class Laptop extends Computer {
 
     //TODO: DECLARE FIELDS
     private boolean charged = true;
+    private int laptopCount = 0;
+
 
 
     //TODO: CREATE THE CONSTRUCTOR
     public Laptop(String brand, int year, String screenMode){
         super(brand, year, screenMode);
+        laptopCount++;
+
     }
 
 
@@ -24,6 +28,10 @@ public class Laptop extends Computer {
         this.charged = charged;
     }
 
+
+    public int getLaptopCount() {
+        return laptopCount;
+    }
 
     //TODO: CREATE INSTANCE METHOD doHomework()
     //This method will be called and switch the value of charged to false
@@ -52,5 +60,11 @@ public class Laptop extends Computer {
     //Probably would like to make a plugin method for when the battery is dead. I will come back in later to write it <---I would want it for smartphone too
     //So, should I make it something in Computer to be inherited by both, or does it matter if they have their own methods? Best practice?
     //I will write unit test for this method to check if it works instead of in the main program
+
+
+    @Override
+    String objectId() {
+        return "LAP- " + getLaptopCount();
+    }
 
 }

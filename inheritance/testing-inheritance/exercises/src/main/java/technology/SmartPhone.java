@@ -5,41 +5,42 @@ import java.util.Scanner;
 public class SmartPhone extends Computer {
 
 
-
-
     //TODO: DECLARE FIELDS
     private String provider;
     private boolean delivered = false;
     private String powerMessage;
 
+    private int phoneCount = 0;
+
 
     //TODO: CREATE THE CONSTRUCTOR
-    public SmartPhone(String brand, int year, String screenMode, String provider){
+    public SmartPhone(String brand, int year, String screenMode, String provider) {
         super(brand, year, screenMode);
         this.provider = provider;
+        phoneCount++;
     }
 
     //I might want to make other constructors that don't require a screenMode or even provider. Just year and brand/model
 
 
     //TODO: DECLARE GETTERS AND SETTERS
-    public String getProvider(){
+    public String getProvider() {
         return provider;
     }
 
-    public void setProvider(){
+    public void setProvider() {
         this.provider = provider;
     }
 
-    public boolean getDelivered(){
+    public boolean getDelivered() {
         return delivered;
     }
 
-    public String getPowerMessage(){
+    public String getPowerMessage() {
         return powerMessage;
     }
 
-    public void setPowerMessage(){
+    public void setPowerMessage() {
         this.powerMessage = powerMessage;
     }
 
@@ -48,7 +49,7 @@ public class SmartPhone extends Computer {
     //I want to let the user input what they want to text and then print the message.
     //After message prints. I want to make delivered return true.
 
-    public void sendText(){
+    public void sendText() {
         Scanner input = new Scanner(System.in);
 
         System.out.println(getBrand() + ": Enter the message you would like to send: \n");
@@ -56,7 +57,7 @@ public class SmartPhone extends Computer {
         System.out.println(getBrand() + ": You would like to send: \n\n\t\t'" + message +
                 "'\n\n" + getBrand() + ": Would you like to send? ENTER 'YES or NO'");
         String send = input.nextLine().toUpperCase();
-        if (send.equals("YES")){
+        if (send.equals("YES")) {
             delivered = true;
             System.out.println("\n" + getBrand() + ": Perfect! Message sent!");
         } else {
@@ -73,7 +74,7 @@ public class SmartPhone extends Computer {
     //method, I want to try to do an override...
 
     @Override
-    public boolean powerOn(){
+    public boolean powerOn() {
         String border = "**********************************";
         System.out.println(border);
         powerMessage = "\n" + getBrand() + ": Powering On... \n5G network is available \nReady to stay connected!\n";
@@ -102,4 +103,20 @@ public class SmartPhone extends Computer {
 
     //Or, I could take an already written data file of contacts (setup as hashmaps) and use it similarly to the techJobs
     //Job positions, and be able to access them that way in the program.
+
+    //---> I could maybe have a method that links the phone to a Computer/Laptop object, and then you could sendText from there
+    // Or maybe....
+    //The Abstract class could be more of a communication class. It could have methods for
+    //sending and receiving text (smartphone), emails (computer/laptop)
+    //Or computer could have been abstract and containing basic methods like powerON/Off,
+    //Could create another subclass (Desktop/PC) that would be similar to how my computer class acts now instead
+
+
+//----> Maybe add a Desktop and Contact Class. Turn Computer Class into an abstract class. Extend it to all currently subs of Computer and add extension to Desktop
+    //Contact Class-- create contact objects so we have some data to work with
+
+@Override
+    String objectId(){
+        return "PHONE- " + phoneCount;
+}
 }
