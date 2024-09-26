@@ -3,32 +3,73 @@ package technology;
 public abstract class AbstractEntity {
 
     //TODO: create a variable to keep count of objects instantiated
-    private static int objectCount = 0;
-    private int id;
+    private static int nextId = 1;
 
-    public static int getObjectCount() {
-        return objectCount;
+    private final int id;
+    private String brand;
+    private int year;
+    private String screenMode;
+
+
+
+    //TODO: create a constructor
+    public AbstractEntity(String brand, int year, String screenMode) {
+        this.brand = brand;
+        this.year = year;
+        this.screenMode = screenMode;
+        this.id = nextId;
+        nextId++;
     }
 
-    public static void setObjectCount(int objectCount) {
-        AbstractEntity.objectCount = objectCount;
+    //TODO: Create getters for id and nextId
+
+
+    public static int getNextId() {
+        return nextId;
     }
 
     public int getId() {
         return id;
     }
 
+    //TODO: Create Getters/Setters for the fields that came from Computer Class
 
 
-    //TODO: even tho we aren't created objects from this class, make a constructor
-    //Do I make a constructor in the abstract class to keep counts of the different objects?
-    public AbstractEntity() {
-        objectCount++;
+    public String getScreenMode() {
+        return screenMode;
+    }
+
+    public void setScreenMode(String screenMode) {
+        this.screenMode = screenMode;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
 
 
-    //TODO: Create an abstract method to be overridden in other classes
-    abstract String objectId();
+    //TODO: Create a toString() method to list product info
+    public String toString(){
+        String newline = System.lineSeparator();
+        return "INFORMATION:" + newline +
+                "ID: " + getId() + newline +
+                "Product: " + getClass() + newline +
+                "Brand: " + getBrand() + newline +
+                "Year: " + getYear() + newline;
+    }
+
 
 }

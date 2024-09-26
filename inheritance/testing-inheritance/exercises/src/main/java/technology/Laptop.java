@@ -4,15 +4,17 @@ public class Laptop extends Computer {
 
     //TODO: DECLARE FIELDS
     private boolean charged = true;
-    private int laptopCount = 0;
+
 
 
 
     //TODO: CREATE THE CONSTRUCTOR
     public Laptop(String brand, int year, String screenMode){
         super(brand, year, screenMode);
-        laptopCount++;
 
+        //Do I need to set charged to true, inside the constructor for?
+        //I didn't before and methods worked, but would it be best to assume
+        //each object is charged when instantiated.
     }
 
 
@@ -29,9 +31,7 @@ public class Laptop extends Computer {
     }
 
 
-    public int getLaptopCount() {
-        return laptopCount;
-    }
+
 
     //TODO: CREATE INSTANCE METHOD doHomework()
     //This method will be called and switch the value of charged to false
@@ -40,7 +40,7 @@ public class Laptop extends Computer {
         charged = false;
         return "\n" + getBrand() + ": You did it! Great Job!! You finished your homework!";
     }
-
+    //Is this method better as a boolean return instead? Not sure if it makes difference, just curious to common practice
 
 
     //TODO: CREATE INSTANCE METHOD checkBatteryLevel()
@@ -55,6 +55,13 @@ public class Laptop extends Computer {
         }
     }
 
+    //TODO: Create a toString() method to list product info
+    public String toString(){
+        String newline = System.lineSeparator();
+        return super.toString();
+    }
+
+
 
     //TODO:
     //Probably would like to make a plugin method for when the battery is dead. I will come back in later to write it <---I would want it for smartphone too
@@ -62,9 +69,5 @@ public class Laptop extends Computer {
     //I will write unit test for this method to check if it works instead of in the main program
 
 
-    @Override
-    String objectId() {
-        return "LAP- " + getLaptopCount();
-    }
 
 }

@@ -10,14 +10,13 @@ public class SmartPhone extends Computer {
     private boolean delivered = false;
     private String powerMessage;
 
-    private int phoneCount = 0;
 
 
     //TODO: CREATE THE CONSTRUCTOR
     public SmartPhone(String brand, int year, String screenMode, String provider) {
         super(brand, year, screenMode);
         this.provider = provider;
-        phoneCount++;
+
     }
 
     //I might want to make other constructors that don't require a screenMode or even provider. Just year and brand/model
@@ -32,6 +31,7 @@ public class SmartPhone extends Computer {
         this.provider = provider;
     }
 
+    //I might not want there to be a setter for this because it could mess up my app if someone changes the value outside of calling the methods
     public boolean getDelivered() {
         return delivered;
     }
@@ -115,8 +115,10 @@ public class SmartPhone extends Computer {
 //----> Maybe add a Desktop and Contact Class. Turn Computer Class into an abstract class. Extend it to all currently subs of Computer and add extension to Desktop
     //Contact Class-- create contact objects so we have some data to work with
 
-@Override
-    String objectId(){
-        return "PHONE- " + phoneCount;
-}
+    //TODO: Create a toString() method to list product info, super in from Abstract Class and and in Computer fields
+    public String toString(){
+        String newline = System.lineSeparator();
+        return super.toString() +
+                "Provider: " + provider + newline;
+    }
 }
