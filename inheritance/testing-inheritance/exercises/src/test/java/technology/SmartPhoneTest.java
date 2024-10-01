@@ -76,8 +76,7 @@ public class SmartPhoneTest {
     @Test
     public void smartPhoneOverrideMethodShouldPrintDifferentMessage(){
         String msg = "smartphone should have a different message displayed due to override";
-        String expected = "\"\\n\" + getBrand() + \": Powering On... \\n5G network is available \" +\n" +
-                "                \"\\nReady to stay connected!\\n\"";
+        String expected = "\n" + test_phone2.getBrand() + ": Powering On... \n5G network is available \nReady to stay connected!\n";
         test_phone2.powerOn();
         String actual = test_phone2.getPowerMessage();
         assertEquals(expected, actual, msg);
